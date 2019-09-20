@@ -4,15 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RAC
+namespace RAC.Facturar
 {
-   public class EstadoAuto
+    public class Clientes
     {
-        public bool  Disponible { get; set; }
 
-        public bool Rentado { get; set; }
-
-     
 
 
     }

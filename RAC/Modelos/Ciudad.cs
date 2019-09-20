@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace RAC
 {
-   public class EstadoAuto
+   public class Ciudad
     {
-        public bool  Disponible { get; set; }
-
-        public bool Rentado { get; set; }
-
-     
 
 
     }

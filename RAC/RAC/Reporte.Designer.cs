@@ -30,9 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReporte));
+            System.Windows.Forms.Label idLabel;
+            System.Windows.Forms.Label marcaLabel;
+            System.Windows.Forms.Label modeloLabel;
+            System.Windows.Forms.Label añoLabel;
             this.autoListaBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.autoListaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -45,16 +48,25 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.autoListaBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.autoListaDataGridView = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.autoListaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idTextBox = new System.Windows.Forms.TextBox();
+            this.marcaTextBox = new System.Windows.Forms.TextBox();
+            this.modeloTextBox = new System.Windows.Forms.TextBox();
+            this.añoTextBox = new System.Windows.Forms.TextBox();
+            idLabel = new System.Windows.Forms.Label();
+            marcaLabel = new System.Windows.Forms.Label();
+            modeloLabel = new System.Windows.Forms.Label();
+            añoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.autoListaBindingNavigator)).BeginInit();
             this.autoListaBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.autoListaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoListaDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoListaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // autoListaBindingNavigator
@@ -95,11 +107,6 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            // 
-            // autoListaBindingSource
-            // 
-            this.autoListaBindingSource.AllowNew = true;
-            this.autoListaBindingSource.DataSource = typeof(RAC.Auto);
             // 
             // bindingNavigatorCountItem
             // 
@@ -197,10 +204,24 @@
             this.dataGridViewTextBoxColumn3,
             this.Estado});
             this.autoListaDataGridView.DataSource = this.autoListaBindingSource;
-            this.autoListaDataGridView.Location = new System.Drawing.Point(79, 79);
+            this.autoListaDataGridView.Location = new System.Drawing.Point(30, 208);
             this.autoListaDataGridView.Name = "autoListaDataGridView";
-            this.autoListaDataGridView.Size = new System.Drawing.Size(522, 212);
+            this.autoListaDataGridView.Size = new System.Drawing.Size(472, 148);
             this.autoListaDataGridView.TabIndex = 1;
+            // 
+            // Id
+            // 
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Width = 21;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
             // 
             // label1
             // 
@@ -212,14 +233,6 @@
             this.label1.Size = new System.Drawing.Size(202, 24);
             this.label1.TabIndex = 2;
             this.label1.Text = "Lista de Automoviles";
-            // 
-            // Id
-            // 
-            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Width = 21;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -239,17 +252,92 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Año";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // Estado
+            // autoListaBindingSource
             // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
+            this.autoListaBindingSource.AllowNew = true;
+            this.autoListaBindingSource.DataSource = typeof(RAC.Auto);
+            // 
+            // idLabel
+            // 
+            idLabel.AutoSize = true;
+            idLabel.Location = new System.Drawing.Point(61, 92);
+            idLabel.Name = "idLabel";
+            idLabel.Size = new System.Drawing.Size(19, 13);
+            idLabel.TabIndex = 3;
+            idLabel.Text = "Id:";
+            // 
+            // idTextBox
+            // 
+            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.autoListaBindingSource, "Id", true));
+            this.idTextBox.Location = new System.Drawing.Point(86, 89);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.Size = new System.Drawing.Size(46, 20);
+            this.idTextBox.TabIndex = 4;
+            // 
+            // marcaLabel
+            // 
+            marcaLabel.AutoSize = true;
+            marcaLabel.Location = new System.Drawing.Point(40, 118);
+            marcaLabel.Name = "marcaLabel";
+            marcaLabel.Size = new System.Drawing.Size(40, 13);
+            marcaLabel.TabIndex = 5;
+            marcaLabel.Text = "Marca:";
+            // 
+            // marcaTextBox
+            // 
+            this.marcaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.autoListaBindingSource, "Marca", true));
+            this.marcaTextBox.Location = new System.Drawing.Point(86, 115);
+            this.marcaTextBox.Name = "marcaTextBox";
+            this.marcaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.marcaTextBox.TabIndex = 6;
+            // 
+            // modeloLabel
+            // 
+            modeloLabel.AutoSize = true;
+            modeloLabel.Location = new System.Drawing.Point(35, 144);
+            modeloLabel.Name = "modeloLabel";
+            modeloLabel.Size = new System.Drawing.Size(45, 13);
+            modeloLabel.TabIndex = 7;
+            modeloLabel.Text = "Modelo:";
+            // 
+            // modeloTextBox
+            // 
+            this.modeloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.autoListaBindingSource, "Modelo", true));
+            this.modeloTextBox.Location = new System.Drawing.Point(86, 141);
+            this.modeloTextBox.Name = "modeloTextBox";
+            this.modeloTextBox.Size = new System.Drawing.Size(100, 20);
+            this.modeloTextBox.TabIndex = 8;
+            // 
+            // añoLabel
+            // 
+            añoLabel.AutoSize = true;
+            añoLabel.Location = new System.Drawing.Point(51, 170);
+            añoLabel.Name = "añoLabel";
+            añoLabel.Size = new System.Drawing.Size(29, 13);
+            añoLabel.TabIndex = 9;
+            añoLabel.Text = "Año:";
+            // 
+            // añoTextBox
+            // 
+            this.añoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.autoListaBindingSource, "Año", true));
+            this.añoTextBox.Location = new System.Drawing.Point(86, 167);
+            this.añoTextBox.Name = "añoTextBox";
+            this.añoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.añoTextBox.TabIndex = 10;
             // 
             // FrmReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(731, 399);
+            this.Controls.Add(añoLabel);
+            this.Controls.Add(this.añoTextBox);
+            this.Controls.Add(modeloLabel);
+            this.Controls.Add(this.modeloTextBox);
+            this.Controls.Add(marcaLabel);
+            this.Controls.Add(this.marcaTextBox);
+            this.Controls.Add(idLabel);
+            this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.autoListaDataGridView);
             this.Controls.Add(this.autoListaBindingNavigator);
@@ -259,8 +347,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.autoListaBindingNavigator)).EndInit();
             this.autoListaBindingNavigator.ResumeLayout(false);
             this.autoListaBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.autoListaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoListaDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoListaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,5 +377,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.TextBox idTextBox;
+        private System.Windows.Forms.TextBox marcaTextBox;
+        private System.Windows.Forms.TextBox modeloTextBox;
+        private System.Windows.Forms.TextBox añoTextBox;
     }
 }
